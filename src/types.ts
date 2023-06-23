@@ -136,7 +136,7 @@ interface PromptOptions {
   /**
    * What is it all about
    */
-  topic?: string;
+  topic: string;
   /**
    * Maximum character length of the output
    */

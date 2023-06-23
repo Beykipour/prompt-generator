@@ -30,7 +30,7 @@ describe('getTextCompletionPrompt', () => {
       additionalConstrains: ['l1', 'l2'],
     };
 
-    const prompt = getTextCompletionPrompt(arrayValues);
+    const prompt = getTextCompletionPrompt({ topic: 'topic', ...arrayValues });
 
     Object.values(arrayValues).every((a) => a.every((v) => expect(prompt).toContain(v)));
   });
@@ -52,7 +52,7 @@ describe('getTextCompletionPrompt', () => {
       'Markdown',
     ];
 
-    const prompt = getTextCompletionPrompt(booleanValues);
+    const prompt = getTextCompletionPrompt({ topic: 'topic', ...booleanValues });
 
     expectedTexts.every((t) => expect(prompt).toContain(t));
   });
@@ -74,7 +74,7 @@ describe('getTextCompletionPrompt', () => {
       'Markdown',
     ];
 
-    const prompt = getTextCompletionPrompt(booleanValues);
+    const prompt = getTextCompletionPrompt({ topic: 'topic', ...booleanValues });
 
     expectedTexts.every((t) => expect(prompt).not.toContain(t));
   });
