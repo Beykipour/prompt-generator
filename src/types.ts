@@ -1,150 +1,170 @@
-type Tone =
-  | 'formal'
-  | 'casual'
-  | 'playful'
-  | 'authoritative'
-  | 'empathetic'
-  | 'neutral'
-  | 'informative'
-  | 'persuasitve'
-  | 'amusing'
-  | 'humorous';
-type Format =
-  | 'essay'
-  | 'letter'
-  | 'email'
-  | 'news-article'
-  | 'blog-article'
-  | 'scientific-paper'
-  | 'story'
-  | 'poem'
-  | 'instruction-manual'
-  | 'product-description'
-  | 'presentation'
-  | 'dialogue'
-  | 'table'
-  | 'code-block'
-  | 'ordered-list'
-  | 'unordered-list'
-  | 'outline'
-  | 'headline';
-type ActAs =
-  | 'expert'
-  | 'critic'
-  | 'enthusiast'
-  | 'teacher'
-  | 'student'
-  | 'parent'
-  | 'child'
-  | 'friend'
-  | 'advisor'
-  | 'analyst'
-  | 'blogger'
-  | 'researcher'
-  | 'travel-guide';
-type Objective = 'inform' | 'persuade' | 'entertain' | 'explain' | 'advise' | 'analyse' | 'inspire' | 'convince';
-type Audience =
-  | 'professionals'
-  | 'general-public'
-  | 'kindergarten-children'
-  | 'primary-school-students'
-  | 'middle-school-students'
-  | 'highscool-students'
-  | 'undergraduate-students'
-  | 'graduate-students'
-  | 'phd-students'
-  | 'tech-savy-people'
-  | 'non-tech-savy-people'
-  | 'business-people'
-  | 'entrepreneurs'
-  | 'engineers';
-
 interface PromptOptions {
   /**
-   * Desired tone
+   * @description Desired tone
+   * @example
+   * - 'neutral'
+   * - 'formal'
+   * - 'casual'
+   * - 'playful'
+   * - 'authoritative'
+   * - 'empathetic'
+   * - 'neutral'
+   * - 'informative'
+   * - 'persuasitve'
+   * - 'amusing'
+   * - 'humorous'
    */
-  tone?: Tone | string;
+  tone?: string;
+
   /**
-   * Format or structure
+   * @description Format or structure
+   * @example
+   * - 'table'
+   * - 'code block'
+   * - 'ordered list'
+   * - 'unordered list'
+   * - 'outline'
+   * - 'headline'
+   * - 'essay'
+   * - 'letter'
+   * - 'email'
+   * - 'news article'
+   * - 'blog article'
+   * - 'scientific paper'
+   * - 'story'
+   * - 'poem'
+   * - 'instruction manual'
+   * - 'product description'
+   * - 'presentation'
+   * - 'dialogue'
    */
-  format?: Format | string;
+  format?: string;
+
   /**
-   * Role or perspective
+   * @description Role or perspective
+   * @example
+   * - 'expert'
+   * - 'critic'
+   * - 'enthusiast'
+   * - 'teacher'
+   * - 'student'
+   * - 'parent'
+   * - 'child'
+   * - 'friend'
+   * - 'advisor'
+   * - 'analyst'
+   * - 'blogger'
+   * - 'researcher'
+   * - 'travel-guide'
    */
-  actAs?: ActAs | string;
+  actAs?: string;
+
   /**
-   * Goal or purpose
+   * @description Goal or purpose
+   * @example
+   * - 'inform'
+   * - 'persuade'
+   * - 'entertain'
+   * - 'explain'
+   * - 'advise'
+   * - 'analyse'
+   * - 'inspire'
+   * - 'convince'
+   * - 'describe'
+   * - 'compare'
    */
-  objective?: Objective | string;
+  objective?: string;
+
   /**
-   * Background information, data, or context for accurate content generation
+   * @description Target audience
+   * @example
+   * - 'professionals'
+   * - 'general public'
+   * - 'highscool students'
+   * - 'graduate students'
+   * - 'phd students'
+   * - 'tech-savvy people'
+   * - 'non-tech-savvy people'
+   * - 'business people'
+   * - 'entrepreneurs'
+   * - 'engineers'
+   * - 'designers'
+   */
+  audience?: string;
+
+  /**
+   * @description Background information, data, or context for accurate content generation
    */
   context?: string;
+
   /**
-   * Constrains or limitations that should be considered
+   * @description Constrains or limitations that should be considered
    */
   additionalConstrains?: string[];
+
   /**
-   * Important keywords or phrases to be included
+   * @description Important keywords or phrases to be included
    */
   keywords?: string[];
+
   /**
-   * Important keywords or phrases to avoid
+   * @description Important keywords or phrases to avoid
    */
   exclusions?: string[];
+
   /**
-   * Example of desired content
+   * @description Example of desired content
    */
   example?: string;
+
   /**
-   * Target audience
-   */
-  audience?: Audience | string;
-  /**
-   * Language for the response
+   * @description Language for the response
    */
   language?: string;
+
   /**
-   * Inclusion of citations or sources to support information
+   * @description Inclusion of citations or sources to support information
    */
   shouldIncludeCitations?: boolean;
   /**
-   * Inclusion of analogies or examples to clarify concepts
+   * @description Inclusion of analogies or examples to clarify concepts
    */
   shouldIncludeAnalogies?: boolean;
   /**
-   * Inclusion of relevant quotes or statements from experts
+   * @description Inclusion of relevant quotes or statements from experts
    */
   shouldIncludeQuotes?: boolean;
   /**
-   * Inclusion of statistics or data to support claims
+   * @description Inclusion of statistics or data to support claims
    */
   shouldIncludeStatistics?: boolean;
   /**
-   * Format with markdown
+   * @description Format with markdown
    */
   shouldUseMarkdown?: boolean;
   /**
-   * Force the tabular strcture with specified columns for the output
+   * @description Force the tabular strcture with specified columns for the output
    * Use alongside `format: table`
    */
   tableColumns?: string[];
+
   /**
-   * Call to action for next steps to be included in the output
+   * @description Call to action for next steps to be included in the output
    */
   callToAction?: string;
+
   /**
-   * What is it all about
+   * @description What is it all about
    */
   topic: string;
   /**
-   * Maximum character length of the output
+   * @description Maximum character length of the output
    */
   maxLength?: number;
   /**
-   * Mimic specific person
+   * @description Mimic specific person
    */
   mimicPerson?: string;
 }
 
-export { PromptOptions, Tone, ActAs, Objective, Audience, Format };
+export { PromptOptions };
