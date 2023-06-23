@@ -20,6 +20,7 @@ import { getTextCompletionPrompt, getTokenCount } from 'prompt-generator';
 const prompt = getTextCompletionPrompt(customizationOptions);
 const promptTokenCount = getTokenCount(prompt);
 //...
+// Assuming you are using OpenAI:
 const response = await openai.createCompletion({
   model: 'text-davinci-003',
   prompt,
