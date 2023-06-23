@@ -15,15 +15,28 @@ npm i prompt-generator
 ## Usage
 
 ```ts
-import { getTextCompletionPrompt } from 'prompt-generator';
+import { getTextCompletionPrompt, getTokenCount } from 'prompt-generator';
 //...
 const prompt = getTextCompletionPrompt(customizationOptions);
+const promptTokenCount = getTokenCount(prompt);
 //...
 const response = await openai.createCompletion({
   model: 'text-davinci-003',
   prompt,
+  max_tokens: MODEL_CONTEXT_LENGTH - promptTokenCount,
 });
 ```
+
+## Available utils:
+
+### `getTokenCount`
+
+Gives you the count of the tokens of your prompt. Note that the token count of your prompt plus expected maximum token length of the response cannot exceed the model's context length.
+This util uses [gpt-3-encoder](https://www.npmjs.com/package/gpt-3-encoder) under the hood.
+
+### `getTextCompletionPrompt`
+
+Generates a completion prompt based on a given set of options.
 
 ## Available options:
 
