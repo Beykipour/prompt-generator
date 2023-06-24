@@ -27,7 +27,7 @@ describe('getTextCompletionPrompt', () => {
       keywords: ['kw1', 'kw2', 'kw3'],
       exclusions: ['kw4', 'kw5', 'kw6'],
       tableColumns: ['col1, col2'],
-      additionalConstrains: ['l1', 'l2'],
+      additionalConstraints: ['l1', 'l2'],
     };
 
     const prompt = getTextCompletionPrompt({ topic: 'topic', ...arrayValues });

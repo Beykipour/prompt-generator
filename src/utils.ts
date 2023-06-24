@@ -10,7 +10,7 @@ const getInstructions = (options: PromptOptions): string[] => {
     format,
     objective,
     context,
-    additionalConstrains,
+    additionalConstraints,
     keywords,
     example,
     audience,
@@ -56,8 +56,8 @@ const getInstructions = (options: PromptOptions): string[] => {
     ),
     getInstructionIfApplicable(`Consider this additional context: "${context}".`, !!context),
     getInstructionIfApplicable(
-      `Strictly consider this set of constrains: ${additionalConstrains?.map((k) => `"${k}"`).join(', ')}.`,
-      !!additionalConstrains,
+      `Strictly consider this set of constraints: ${additionalConstraints?.map((k) => `"${k}"`).join(', ')}.`,
+      !!additionalConstraints,
     ),
     getInstructionIfApplicable(
       `Make sure to include the following keywords in the generated text: ${keywords

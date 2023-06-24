@@ -64,9 +64,9 @@ interface PromptOptions {
    */
   context?: string;
   /**
-   * Constrains or limitations that should be considered
+   * Constraints or limitations that should be considered
    */
-  additionalConstrains?: string[];
+  additionalConstraints?: string[];
   /**
    * Important keywords or phrases to be included
    */
@@ -140,7 +140,11 @@ interface PromptOptions {
   "actAs": "enthusiast",
   "objective": "entertain",
   "context": "I want to read the text in a TV show",
-  "additionalConstrains": ["use short senteces", "break the text into multiple paragraphs"],
+  "additionalConstraints": [
+    "avoid using any human names in the text",
+    "use short senteces",
+    "break the text into multiple paragraphs"
+  ],
   "keywords": ["moonlight", "twilight", "sunshine"],
   "exclusions": ["hello", "goodbye", "hell", "heaven"],
   "example": "Sun is really useful for the environment and livelihoon on earth. people will die without sun. but we should make sure to to wear sunglasses and sunscreen to stay safe when we are sunbathing",
@@ -174,7 +178,7 @@ Follow the following instructions and generate a text response based on them.
 - Include relevant quotes or statements from experts in the generated text.
 - Where possible, include statistics or data to support claims in the generated text.
 - Consider this additional context: "I want to read the text in a TV show".
-- Strictly consider this set of constrains: "avoid using any human names in the text".
+- Strictly consider this set of constraints: "avoid using any human names in the text", "use short sentences", "break the text into multiple paragraphs".
 - Make sure to include the following keywords in the generated text: "moonlight", "twilight", "sunshine".
 - Make sure not to use the following keywords in the generated text: "hello", "goodbye", "hell", "heaven".
 - The generated text should be in the style of "Shakespeare".
@@ -189,15 +193,13 @@ Stictly double check if all the above instructions are taken into consideration 
 ## Example ChatGPT response:
 
 ```text
-The Moon is a fascinating celestial object that has been gracing our night sky for centuries! Its enigmatic light in the form of moonlight, twilight, and even in the middle of the day's sunshine, has inspired poets, artists, and scientists alike. From its role in the tides of our oceans to its significance in different religious beliefs, the Moon has been an inspiration and the subject of wonder for mankind.
+The moon is a natural satellite of Earth, which fascinates us with its magnificent presence at night as well as during the day. It appears during the twilight hours, creating an exponential effect of ambient light and casting a luminous spell in the form of moonlight. We appreciate the moon for its beauty, presence, and wisdom embedded in its essential functions such as tide movement and climate control.
 
-When we look at the Moon, we are looking at cosmic history - its craters are battle scars of collisions with planets and other objects in its vicinity. We can also observe its phases, an ever-changing reminder of its orbital journey around the Earth. Studies have shown that the moon reflects the Earth’s light which is why we can observe it even at times when it is facing away from the Sun.
+To understand the moon's impact on different aspects of life, it is important to take into account not only the physical element but also its metaphorical interpretation. For example, in some cultures, the moon is an important symbol of mystery, linking it to spiritual teachings. As Shakespeare rightly said: “The moon tells secrets she’s sworn never to reveal.” That is why the moon has become a source of inspiration for many generations, as it can be seen in different works of art, literature, and music.
 
-Interestingly, scientists have concluded that long ago, the Earth and Moon rotated on a much faster speed leading to much more frequent lunar eclipses, but also potentially creating issues for life on the planet due to unstable climates. The Moon's gravitational pull also creates the ocean tides on Earth.
+From a scientific point of view, the effects of the moon on Earth can be explained in terms of its gravitational pull, which provokes high and low tides and affects ocean currents and hence, climate. Additionally, the moon reflects the sun's light and radiates heat, making it an inevitable element for the balance of different weather types, from, for example, mild winter days to dry summer afternoons.
 
-From society's perspective, the Moon and its phases have helped with navigation and acted as a timekeeper. Many cultures, including the Jewish and Islamic, have used the Moon's cyclic phases for their religious calendar.
-
-In the current day and age, the Moon continues to fascinate us. Explorations such as the Moon landing have revealed more of its mysteries, and also the continued ambition of the human spirit to don the mantle and tread where no one has gone before.
+The moon has a mystical charm that is unique and timeless. It is the perfect backdrop for moments of reflection, and for finding our inner peace while observing its majestic presence in the night sky.
 
 What is your favorite weather?
 ```
