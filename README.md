@@ -4,7 +4,7 @@ Simple type-safe prompt generator - no need to go through long articles or cheat
 
 ✋ This project was created as for my own personal learning and curiousity, so the functionality and quality is not guaranteed. But any suggestions for improvements or any contributions is highly welcome and appreciated :)
 
-And it's a tiny package, 1.6k gzipped.
+And it's a tiny package, 6.4kB tgz.
 
 ## Instrallation
 
@@ -119,7 +119,7 @@ interface PromptOptions {
   /**
    * What is it all about
    */
-  topic?: string;
+  topic: string;
   /**
    * Maximum character length of the output
    */
@@ -163,56 +163,41 @@ interface PromptOptions {
 
 ```txt
 Follow the following instructions and generate a text response based on them.
-
 - Act as expert.
-
 - Write a text about moon.
-
 - The goal of the text is to inform.
-
-- The tone of the text should be formal.
-
+- The tone of voice of the text should be formal.
 - The text should be generated for this target audience: "teenagers".
-
 - Format and structure of the text should be essay
-
 - Include the main sources to support information in the generated text.
-
 - Include some analogies or examples to clarify concepts in the generated text.
-
 - Include relevant quotes or statements from experts in the generated text.
-
 - Where possible, include statistics or data to support claims in the generated text.
-
 - Consider this additional context: "I want to read the text in a TV show".
-
-- Strictly consider this set of constrains: "moonlight", "twilight", "sunshine".
-
+- Strictly consider this set of constrains: "avoid using any human names in the text".
 - Make sure to include the following keywords in the generated text: "moonlight", "twilight", "sunshine".
-
 - Make sure not to use the following keywords in the generated text: "hello", "goodbye", "hell", "heaven".
-
-- The generated text should be in the style of "Shakespeare"
-
+- The generated text should be in the style of "Shakespeare".
 - At the end, clearly request about "What is your favorite weather".
-
 - Consider this example: "Sun is really useful for the environment and livelihoon on earth. people will die without sun. but we should make sure to to wear sunglasses and sunscreen to stay safe when we are sunbathing".
-
 - Maximum length of the generated text should be no more than 500 characters.
-
 - Format generated text with Markdown.
-
 - The text should be in English language.
-
 Stictly double check if all the above instructions are taken into consideration and the response is accurate before returning it.
 ```
 
 ## Example ChatGPT response:
 
 ```text
-The moon provides us with a special kind of light – moonlight. It is said that moonlight has powerful effects on our well-being – positively and negatively. For example, many people find the night sky brighter during a full moon, and they report feeling more energized and active. Twilight is another phenomenon, when the gradually lightening sky signals the transition from night to morning. We often find ourselves in a place of beauty and peace when watching the sky slowly fading into a sunshine-filled day.
+The Moon is a fascinating celestial object that has been gracing our night sky for centuries! Its enigmatic light in the form of moonlight, twilight, and even in the middle of the day's sunshine, has inspired poets, artists, and scientists alike. From its role in the tides of our oceans to its significance in different religious beliefs, the Moon has been an inspiration and the subject of wonder for mankind.
 
-The moon holds a pivotal role in our lives. It controls the tide and can have an effect on the environment. It’s hard to measure how much of an impact the moon has on our environment, but experts have seen an impact on breeding, bird migration and animal behavior. We also know that there are no such thing as three days of continuous sunlight or three nights of continuous darkness on Earth, thanks to the powerful impact of the moon.
+When we look at the Moon, we are looking at cosmic history - its craters are battle scars of collisions with planets and other objects in its vicinity. We can also observe its phases, an ever-changing reminder of its orbital journey around the Earth. Studies have shown that the moon reflects the Earth’s light which is why we can observe it even at times when it is facing away from the Sun.
 
-The moon has long been a source of inspiration for poets, writers, and artists – from Shakespeare’s sonnets that referenced the moon, to Vincent van Gogh’s paintings of the night sky, to the words of Neil Armstrong
+Interestingly, scientists have concluded that long ago, the Earth and Moon rotated on a much faster speed leading to much more frequent lunar eclipses, but also potentially creating issues for life on the planet due to unstable climates. The Moon's gravitational pull also creates the ocean tides on Earth.
+
+From society's perspective, the Moon and its phases have helped with navigation and acted as a timekeeper. Many cultures, including the Jewish and Islamic, have used the Moon's cyclic phases for their religious calendar.
+
+In the current day and age, the Moon continues to fascinate us. Explorations such as the Moon landing have revealed more of its mysteries, and also the continued ambition of the human spirit to don the mantle and tread where no one has gone before.
+
+What is your favorite weather?
 ```
