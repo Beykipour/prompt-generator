@@ -31,9 +31,9 @@ const getInstructions = (options: PromptOptions): string[] => {
     getInstructionIfApplicable(`Act as ${actAs}.`, !!actAs),
     getInstructionIfApplicable(`Write a text about ${topic}.`, !!topic),
     getInstructionIfApplicable(`The goal of the text is to ${objective}.`, !!objective),
-    getInstructionIfApplicable(`The tone of the text should be ${tone}.`, !!tone),
+    getInstructionIfApplicable(`The tone of voice of the text should be ${tone}.`, !!tone),
     getInstructionIfApplicable(`The text should be generated for this target audience: "${audience}".`, !!audience),
-    getInstructionIfApplicable(`Format and structure of the text should be ${format}`, !!format),
+    getInstructionIfApplicable(`Format and structure of the text should be ${format}.`, !!format),
     getInstructionIfApplicable(
       `The table should include the following tables: ${tableColumns?.map((k) => `"${k}"`).join(', ')}.`,
       format === 'table' && !!tableColumns,
@@ -56,7 +56,7 @@ const getInstructions = (options: PromptOptions): string[] => {
     ),
     getInstructionIfApplicable(`Consider this additional context: "${context}".`, !!context),
     getInstructionIfApplicable(
-      `Strictly consider this set of constrains: ${keywords?.map((k) => `"${k}"`).join(', ')}.`,
+      `Strictly consider this set of constrains: ${additionalConstrains?.map((k) => `"${k}"`).join(', ')}.`,
       !!additionalConstrains,
     ),
     getInstructionIfApplicable(
@@ -71,7 +71,7 @@ const getInstructions = (options: PromptOptions): string[] => {
         .join(', ')}.`,
       !!exclusions,
     ),
-    getInstructionIfApplicable(`The generated text should be in the style of "${mimicPerson}"`, !!mimicPerson),
+    getInstructionIfApplicable(`The generated text should be in the style of "${mimicPerson}".`, !!mimicPerson),
     getInstructionIfApplicable(`At the end, clearly request about "${callToAction}".`, !!callToAction),
     getInstructionIfApplicable(`Consider this example: "${example}".`, !!example),
     getInstructionIfApplicable(
