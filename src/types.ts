@@ -98,9 +98,9 @@ interface PromptOptions {
   context?: string;
 
   /**
-   * @description Constrains or limitations that should be considered
+   * @description Constraints or limitations that should be considered
    */
-  additionalConstrains?: string[];
+  additionalConstraints?: string[];
 
   /**
    * @description Important keywords or phrases to be included
