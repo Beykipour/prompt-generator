@@ -12,32 +12,38 @@ And it's a tiny package, 6.4kB tgz.
 npm i prompt-generator
 ```
 
+## Available Utils:
+
+- `getTextCompletionPrompt: Generates a completion prompt based on a given set of options.
+
 ## Usage
 
 ```ts
-import { getTextCompletionPrompt, getTokenCount } from 'prompt-generator';
+import { getTextCompletionPrompt } from 'prompt-generator';
+
 //...
 const prompt = getTextCompletionPrompt(customizationOptions);
-const promptTokenCount = getTokenCount(prompt);
 //...
 // Assuming you are using OpenAI:
 const response = await openai.createCompletion({
   model: 'text-davinci-003',
   prompt,
-  max_tokens: MODEL_CONTEXT_LENGTH - promptTokenCount,
 });
 ```
 
-## Available utils:
+Note: You may need to set the maximum possible tokens for the response of your AI model. For that, you may want to use a package like [gpt-3-encoder](https://www.npmjs.com/package/gpt-3-encoder) to get the token count of your prompt. Then the you can calculate the maximum token of response like this:
 
-### `getTokenCount`
-
-Gives you the count of the tokens of your prompt. Note that the token count of your prompt plus expected maximum token length of the response cannot exceed the model's context length.
-This util uses [gpt-3-encoder](https://www.npmjs.com/package/gpt-3-encoder) under the hood.
-
-### `getTextCompletionPrompt`
-
-Generates a completion prompt based on a given set of options.
+```ts
+import { encode } from 'gpt-3-encoder';
+//...
+const promptTokenCount = encode(prompt).length;
+//...
+// Assuming you are using OpenAI:
+const response = await openai.createCompletion({
+  //...
+  max_tokens: MODEL_CONTEXT_LENGTH - promptTokenCount,
+});
+```
 
 ## Available options:
 
@@ -192,14 +198,12 @@ Stictly double check if all the above instructions are taken into consideration 
 
 ## Example ChatGPT response:
 
-```text
-The moon is a natural satellite of Earth, which fascinates us with its magnificent presence at night as well as during the day. It appears during the twilight hours, creating an exponential effect of ambient light and casting a luminous spell in the form of moonlight. We appreciate the moon for its beauty, presence, and wisdom embedded in its essential functions such as tide movement and climate control.
+> The moon is a natural satellite of Earth, which fascinates us with its magnificent presence at night as well as during the day. It appears during the twilight hours, creating an exponential effect of ambient light and casting a luminous spell in the form of moonlight. We appreciate the moon for its beauty, presence, and wisdom embedded in its essential functions such as tide movement and climate control.
 
-To understand the moon's impact on different aspects of life, it is important to take into account not only the physical element but also its metaphorical interpretation. For example, in some cultures, the moon is an important symbol of mystery, linking it to spiritual teachings. As Shakespeare rightly said: “The moon tells secrets she’s sworn never to reveal.” That is why the moon has become a source of inspiration for many generations, as it can be seen in different works of art, literature, and music.
+> To understand the moon's impact on different aspects of life, it is important to take into account not only the physical element but also its metaphorical interpretation. For example, in some cultures, the moon is an important symbol of mystery, linking it to spiritual teachings. As Shakespeare rightly said: “The moon tells secrets she’s sworn never to reveal.” That is why the moon has become a source of inspiration for many generations, as it can be seen in different works of art, literature, and music.
 
-From a scientific point of view, the effects of the moon on Earth can be explained in terms of its gravitational pull, which provokes high and low tides and affects ocean currents and hence, climate. Additionally, the moon reflects the sun's light and radiates heat, making it an inevitable element for the balance of different weather types, from, for example, mild winter days to dry summer afternoons.
+> From a scientific point of view, the effects of the moon on Earth can be explained in terms of its gravitational pull, which provokes high and low tides and affects ocean currents and hence, climate. Additionally, the moon reflects the sun's light and radiates heat, making it an inevitable element for the balance of different weather types, from, for example, mild winter days to dry summer afternoons.
 
-The moon has a mystical charm that is unique and timeless. It is the perfect backdrop for moments of reflection, and for finding our inner peace while observing its majestic presence in the night sky.
+> The moon has a mystical charm that is unique and timeless. It is the perfect backdrop for moments of reflection, and for finding our inner peace while observing its majestic presence in the night sky.
 
-What is your favorite weather?
-```
+> What is your favorite weather?
