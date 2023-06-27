@@ -1,6 +1,6 @@
 {
   "name": "prompt-generator",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Simple type-safe prompt generator - No need to go through long articles or cheatsheets to make sure you are considering the factors required for a simple prompt.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
