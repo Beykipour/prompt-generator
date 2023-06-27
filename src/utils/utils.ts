@@ -40,7 +40,7 @@ const getInstructions = (options: PromptOptions): string[] => {
     shouldIncludeQuotes,
     shouldIncludeStatistics,
     shouldUseMarkdown,
-  } = options;
+  } = _trimAllValuesInObject(options) as PromptOptions;
 
   const instructions = [
     _getInstructionIfApplicable(`Act as ${actAs}.`, !!actAs),
