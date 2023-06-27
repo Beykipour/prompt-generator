@@ -14,7 +14,7 @@ npm i prompt-generator
 
 ## Available Utils:
 
-- `getTextCompletionPrompt: Generates a completion prompt based on a given set of options.
+- `getTextCompletionPrompt`: Generates a completion prompt based on a given set of options.
 
 ## Usage
 
