@@ -1,5 +1,5 @@
 import { PromptOptions } from '../types';
-import { getInstructions } from '../utils';
+import { getInstructions } from '../utils/utils';
 
 /**
  *
@@ -13,11 +13,11 @@ const getTextCompletionPrompt = (options: PromptOptions): string => {
   const instructions = getInstructions(options);
 
   const result = `Follow the following instructions and generate a text response based on them.
-                  ${instructions
-                    .filter((i) => !!i)
-                    .map((i) => `- ${i}`)
-                    .join('\n')}
-                  Stictly double check if all the above instructions are taken into consideration and the response is accurate before returning it.`;
+${instructions
+  .filter((i) => !!i)
+  .map((i) => `- ${i}`)
+  .join('\n')}
+Strictly double check if all the above instructions are taken into consideration and the response is accurate before returning it.`;
 
   return result;
 };
