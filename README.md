@@ -6,6 +6,10 @@ Simple type-safe prompt generator - no need to go through long articles or cheat
 
 And it's a tiny package, 6.4kB tgz.
 
+## Demo
+
+I've showcased a usage of the library in this simple [prompt generator app](https://beykipour.github.io/prompt-generator-app/).
+
 ## Instrallation
 
 ```shell
@@ -193,7 +197,7 @@ Follow the following instructions and generate a text response based on them.
 - Maximum length of the generated text should be no more than 500 characters.
 - Format generated text with Markdown.
 - The text should be in English language.
-Stictly double check if all the above instructions are taken into consideration and the response is accurate before returning it.
+Strictly double check if all the above instructions are taken into consideration and the response is accurate before returning it.
 ```
 
 ## Example ChatGPT response:
